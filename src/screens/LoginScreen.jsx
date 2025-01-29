@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { SafeAreaView, ScrollView, View } from 'react-native';
+import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { TextInput, Button, Text, DefaultTheme } from 'react-native-paper';
 import { Colors } from '../constants/colors';
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-
+    const navigation = useNavigation();
     return (
         <SafeAreaView style={{ backgroundColor: '#181818', flex: 1 }}>
             <Image src='https://i.pinimg.com/736x/f1/85/75/f18575249deb327b7b60c38d2ea8f0f1.jpg' style={{ height: 200 }} />
@@ -71,16 +72,12 @@ const LoginScreen = () => {
                     ¿Se olvidó su contraseña?
                 </Button>
 
-                <Button
-                    mode="contained"
-                    onPress={() => console.log('Ingresar')}
-                    buttonColor={Colors.primary}
-                    textColor="black"
-                    style={{ paddingVertical: 5, marginTop: 20 }}
-                    labelStyle={{ fontWeight: 'bold' }}
+                <TouchableOpacity
+                    style={{ paddingVertical: 5, marginTop: 20, backgroundColor: Colors.primary, paddingVertical: 17, borderRadius: 5 }}
+                    onPress={() => navigation.navigate('home')}
                 >
-                    Ingresar
-                </Button>
+                    <Text style={{ alignSelf: 'center', fontWeight: 'bold' }}>Ingresar</Text>
+                </TouchableOpacity>
             </ScrollView>
         </SafeAreaView>
     );
