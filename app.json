@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.carlosordaz.EDUCAJULI"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0cae5260-1987-4b14-bbb2-8d67a66486ef"
+      }
+    },
+    "owner": "carlosordaz"
   }
 }

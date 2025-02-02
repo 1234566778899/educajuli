@@ -2,18 +2,19 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
-const ReportCharts = ({ width }) => {
+const ReportCharts = ({ width, data }) => {
     const screenWidth = width;
 
     const lineChartData = {
-        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+        labels: Object.keys(data.reportsOverTime),
         datasets: [
             {
-                data: [50, 20, 2, 86, 71, 100],
+                data: Object.values(data.reportsOverTime),
                 strokeWidth: 2, // Grosor de la línea
             },
         ]
     };
+
     const chartConfig = {
         backgroundGradientFrom: '#1E2923',
         backgroundGradientTo: '#08130D',
@@ -23,7 +24,6 @@ const ReportCharts = ({ width }) => {
         style: {
             borderRadius: 16,
         },
-
     };
 
     return (

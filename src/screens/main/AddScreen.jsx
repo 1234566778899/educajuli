@@ -3,8 +3,8 @@ import React from 'react'
 
 const AddScreen = () => {
     return (
-        <View>
-            <Text>AddScreen</Text>
+        <View style={{ flex: 1, backgroundColor: '#181818', justifyContent: 'center' }}>
+            <Text style={{ color: 'white', alignSelf: 'center' }}>Pendiente</Text>
         </View>
     )
 }

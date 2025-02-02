@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './HomeScreen';
 import ProfileScreen from './ProfileScreen';
+import AddScreen from './AddScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,8 +48,9 @@ export default function IndexScreen() {
 
             <Tab.Screen
                 name="add"
-                component={HomeScreen}
+                component={AddScreen}
                 options={{
+                    title: '',
                     tabBarLabel: '',
                     tabBarIcon: () => (
                         <Ionicons name="add" size={30} color="#fff" />
